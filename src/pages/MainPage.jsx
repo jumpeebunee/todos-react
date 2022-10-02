@@ -1,9 +1,10 @@
 import React from "react";
+import TodoApp from "../components/TodoApp";
 
 const MainPage = () => {
     return (
-        <div>
-            <h1>REEEEE</h1>
+        <div className="main-container">
+            <TodoApp/>
         </div>
     )
 };
