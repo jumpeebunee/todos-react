@@ -1,10 +1,20 @@
 import React from "react";
-import TodoApp from "../components/TodoApp";
+import TodoList from "../components/TodoList";
 
 const MainPage = () => {
     return (
         <div className="main-container">
-            <TodoApp/>
+            <div className="todo-app">
+                <div className="app-container todo-header">
+                    <div className="todo-header__info">
+                        <h2>Todos</h2>
+                        <span>3</span>
+                    </div>
+                </div>
+                <div className="app-container"> 
+                    <TodoList/>
+                </div>
+            </div>
         </div>
     )
 };

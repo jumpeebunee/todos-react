@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 * {
   font-family: Roboto;
 }
@@ -25,8 +25,13 @@ html {
   box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.25);
 }
 
+.app-container {
+  max-width: 1020px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .todo-header {
-  padding: 0px 40px;
   border-bottom: 2px solid #F4F4F4;
 }
 
@@ -59,4 +64,65 @@ html {
   line-height: 21px;
   background-color: #F6F5FA;
   border-radius: 50%;
+}
+
+.todo-app_list {
+  margin: 40px 0px;
+}
+
+.todo-app__item {
+  display: flex;
+  list-style: none;
+}
+.todo-app__item h3 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+}
+.todo-app__item p {
+  margin-top: 5px;
+  font-size: 16px;
+  line-height: 19px;
+  color: #908A9B;
+}
+
+.todo-app__item-main {
+  margin-left: 13px;
+}
+
+.todo-app__item-about {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.todo-app__item-info {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 19px;
+}
+.todo-app__item-info span {
+  display: block;
+  width: 18px;
+  height: 20px;
+  margin-right: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.todo-app__item-calendar {
+  color: #CB6668;
+}
+
+.todo-app__item-user {
+  color: #908A9B;
+}
+
+.todo-app__item-about-dot {
+  width: 5px;
+  height: 5px;
+  margin: 0px 10px;
+  border-radius: 50%;
+  background: rgba(144, 138, 155, 0.4);
 }/*# sourceMappingURL=style.css.map */
