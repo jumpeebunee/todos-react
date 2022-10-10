@@ -78,7 +78,13 @@ $purple: #672EE3;
 }
 
 .todo-app_list {
+    height: 400px;
+    overflow-y: scroll;
     margin: 40px 0px;
+
+    &::-webkit-scrollbar {
+        width: 0px;
+    }
 }
 
 .todo-app__item {

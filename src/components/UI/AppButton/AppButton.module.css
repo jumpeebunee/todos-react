@@ -6,4 +6,10 @@
     color: #FFFFFF;
     background: #672EE3;
     border-radius: 10px;
+    transition: all ease .4s;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    background: #461E9C;
 }
