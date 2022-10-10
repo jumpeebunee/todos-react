@@ -3,9 +3,13 @@ import TodoItem from "./TodoItem";
 
 const TodoList = () => {
     return (
-        <ul className="todo-app_list">
-            <TodoItem/>
-        </ul>
+        <div className="app-container"> 
+            <ul className="todo-app_list">
+                <TodoItem/>
+                <TodoItem/>
+                <TodoItem/>
+            </ul>
+        </div>
     );
 };
 

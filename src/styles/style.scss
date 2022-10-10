@@ -20,16 +20,20 @@ $purple: #672EE3;
 }
 
 .todo-app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
     max-width: 1100px;
     height: 800px;
-    padding: 24px 0px;
+    padding-top: 24px;
     border-radius: 20px;
     background-color: #FFF;
     box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.25);
 }
 
 .app-container {
+    width: 100%;
     max-width: 1020px;
     margin-left: auto;
     margin-right: auto;
@@ -80,6 +84,12 @@ $purple: #672EE3;
 .todo-app__item {
     display: flex;
     list-style: none;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #F4F4F4;
+
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
 
     h3 {
         font-weight: 500;
@@ -135,4 +145,48 @@ $purple: #672EE3;
     margin: 0px 10px;
     border-radius: 50%;
     background: rgba(144, 138, 155, 0.4);
+}
+
+.app-container__create {
+    padding-top: 40px;
+    padding-bottom: 34px;
+}
+
+.todo-app__create {
+    box-shadow: 0px -4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+}
+
+.todo-app__create-inputs {
+    display: flex;
+    flex-direction: column;
+
+    textarea {
+        margin-top: 15px;
+        height: 83px;
+    }
+
+    textarea, textarea::placeholder {
+        resize: none;
+        font-size: 18px;
+        line-height: 21px;
+        color: #908A9B;
+    }
+
+    input, input::placeholder {
+        font-size: 22px;
+        line-height: 26px;
+        color: #908A9B;
+    }
+}
+
+.todo-app__create-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.todo-app__create-buttons-change {
+    display: flex;
+    gap: 20px;
 }

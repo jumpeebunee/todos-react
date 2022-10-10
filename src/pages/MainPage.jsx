@@ -1,19 +1,17 @@
 import React from "react";
+import CreateTodo from "../components/CreateTodo";
+import TodoHeader from "../components/TodoHeader";
 import TodoList from "../components/TodoList";
 
 const MainPage = () => {
     return (
         <div className="main-container">
             <div className="todo-app">
-                <div className="app-container todo-header">
-                    <div className="todo-header__info">
-                        <h2>Todos</h2>
-                        <span>3</span>
-                    </div>
-                </div>
-                <div className="app-container"> 
+                <div>
+                    <TodoHeader/>
                     <TodoList/>
                 </div>
+                <CreateTodo/>
             </div>
         </div>
     )
