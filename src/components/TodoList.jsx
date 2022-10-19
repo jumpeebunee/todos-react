@@ -7,7 +7,11 @@ const TodoList = ({todos}) => {
             <ul className="todo-app_list">
                 {todos.map(todo => 
                     <TodoItem
-                        key={todo.id}
+                        key={todo.id + todo.title}
+                        title={todo.title}
+                        description={todo.description}
+                        username={todo.username}
+                        date={todo.date}
                     />
                 )}
             </ul>

@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import CreateTodo from "../components/CreateTodo";
 import TodoHeader from "../components/TodoHeader";
 import TodoList from "../components/TodoList";
+import AppButton from "../components/UI/AppButton/AppButton";
+import AppInput from "../components/UI/AppInput/AppInput";
+import AppModal from "../components/UI/AppModal/AppModal";
 
 const MainPage = () => {
+
+    const options = {year: 'numeric', month: 'short', day: 'numeric' };
 
     const [todos, setTodos] = useState([
         {
@@ -29,7 +34,15 @@ const MainPage = () => {
         },
         
     ]);
+    
+    const [modalOpen, setModalOpen] = useState(false);
+    const [username, setUsername] = useState('Default Name');
+    const [currentDate, setCurrentDate] = useState(new Date().toLocaleDateString('en-US', options).split(',').join(''));
 
+    function changeDate(e) {
+        setCurrentDate(new Date(e).toLocaleDateString('en-US', options).split(',').join(''));
+    };
+    
     return (
         <div className="main-container">
             <div className="todo-app">
@@ -37,8 +50,20 @@ const MainPage = () => {
                     <TodoHeader/>
                     <TodoList todos={todos}/>
                 </div>
-                <CreateTodo/>
+                <CreateTodo
+                    todos={todos}
+                    setTodos={setTodos}
+                    modalOpen={modalOpen}
+                    setModalOpen={setModalOpen}
+                    username={username}
+                    currentDate={currentDate}
+                />
             </div>
+            <AppModal modalOpen={modalOpen} setModalOpen={setModalOpen}>
+                <AppInput setValue={setUsername} style={{marginBottom: '15px'}} type="text" placeholder="Username"/>
+                <AppInput setValue={(e) => changeDate(e)} style={{marginBottom: '15px'}} type="date" placeholder="Date"/>
+                <AppButton style={{width: '100%'}}>Change</AppButton>
+            </AppModal>
         </div>
     )
 };
