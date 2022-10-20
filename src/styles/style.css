@@ -192,6 +192,15 @@ html {
   line-height: 26px;
   color: #908A9B;
 }
+.todo-app__create-inputs .todo-app__create-input_error::-moz-placeholder {
+  color: #CB6668;
+}
+.todo-app__create-inputs .todo-app__create-input_error:-ms-input-placeholder {
+  color: #CB6668;
+}
+.todo-app__create-inputs .todo-app__create-input_error::placeholder {
+  color: #CB6668;
+}
 
 .todo-app__create-buttons {
   display: flex;

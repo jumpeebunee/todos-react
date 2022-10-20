@@ -184,7 +184,11 @@ $purple: #672EE3;
         line-height: 26px;
         color: #908A9B;
     }
+    .todo-app__create-input_error::placeholder {
+        color: $red;
+    }
 }
+
 
 .todo-app__create-buttons {
     display: flex;

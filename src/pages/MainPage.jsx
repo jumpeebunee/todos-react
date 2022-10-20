@@ -36,8 +36,10 @@ const MainPage = () => {
     ]);
     
     const [modalOpen, setModalOpen] = useState(false);
+    const [newTodo, setNewTodo] = useState({id: '', title: '', description: '', username: '', date: ''});
     const [username, setUsername] = useState('Default Name');
     const [currentDate, setCurrentDate] = useState(new Date().toLocaleDateString('en-US', options).split(',').join(''));
+    const [errors, setErrors] = useState({title: false});
 
     function changeDate(e) {
         setCurrentDate(new Date(e).toLocaleDateString('en-US', options).split(',').join(''));
@@ -53,19 +55,22 @@ const MainPage = () => {
                 <CreateTodo
                     todos={todos}
                     setTodos={setTodos}
-                    modalOpen={modalOpen}
+                    newTodo={newTodo}
+                    setNewTodo={setNewTodo}
                     setModalOpen={setModalOpen}
                     username={username}
                     currentDate={currentDate}
+                    errors={errors}
+                    setErrors={setErrors}
                 />
             </div>
             <AppModal modalOpen={modalOpen} setModalOpen={setModalOpen}>
                 <AppInput setValue={setUsername} style={{marginBottom: '15px'}} type="text" placeholder="Username"/>
                 <AppInput setValue={(e) => changeDate(e)} style={{marginBottom: '15px'}} type="date" placeholder="Date"/>
-                <AppButton style={{width: '100%'}}>Change</AppButton>
+                <AppButton onClick={() => setModalOpen(false)} style={{width: '100%'}}>Change</AppButton>
             </AppModal>
         </div>
-    )
+    );
 };
 
 export default MainPage;
