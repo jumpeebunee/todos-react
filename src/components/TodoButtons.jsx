@@ -4,15 +4,13 @@ import calednarIcon from "../assets/img/calendarNone.svg";
 import userIcon from "../assets/img/user.svg";
 import AppButton from "./UI/AppButton/AppButton";
 
-const TodoButtons = ({todos, setTodos, newTodo, setModalOpen, username, currentDate, errors, setErrors}) => {
+const TodoButtons = ({todos, setTodos, newTodo, setModalOpen, username, currentDate}) => {
 
     function addNewTodo() {
-        if(newTodo.title.length <= 0) {
-            setErrors({...errors, title: true});
-        } else {
-            setTodos([...todos, {...newTodo,  date: currentDate, username: username}]);
-            setErrors({...errors, title: false});
+        if (new Date(currentDate).getTime() - new Date().getTime() > 0) {
+
         };
+        setTodos([...todos, {...newTodo,  date: currentDate, username: username}]);
     };
 
     return (
@@ -21,7 +19,7 @@ const TodoButtons = ({todos, setTodos, newTodo, setModalOpen, username, currentD
                 <SecondButton onClick={() => setModalOpen(true)} icon={calednarIcon}>Due Date</SecondButton>
                 <SecondButton onClick={() => setModalOpen(true)} icon={userIcon}>Assign to</SecondButton>
             </div>
-            <AppButton onClick={() => addNewTodo()}>Add todo</AppButton>
+            <AppButton disabled={newTodo.title.length <= 0 ? true : false} onClick={() => addNewTodo()}>Add todo</AppButton>
         </div>
     );
 };

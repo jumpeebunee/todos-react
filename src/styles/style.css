@@ -35,6 +35,10 @@ html {
   margin-right: auto;
 }
 
+.app-button_disabled {
+  background-color: #9868FF;
+}
+
 .todo-header {
   border-bottom: 2px solid #F4F4F4;
 }
@@ -126,6 +130,10 @@ html {
 }
 
 .todo-app__item-calendar {
+  color: #908A9B;
+}
+
+.todo-app__item-calendar_deadline {
   color: #CB6668;
 }
 

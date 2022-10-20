@@ -15,21 +15,21 @@ const MainPage = () => {
             id: 1,
             title: 'Learn javascripit and typescript',
             description: 'At the Frontendconf 2021 conference, showed the pros and cons of TypeScript',
-            date: '25 Feb 2022',
+            date: '25 Oct 2022',
             username: 'Ben Horn',
         },
         {
             id: 2,
             title: 'Create Landing page',
             description: '',
-            date: '29 Feb 2022',
+            date: '20 Oct 2022',
             username: 'Ben Horn',
         },
         {
             id: 3,
             title: 'Learn React Hooks',
             description: 'Need for making amazing websites',
-            date: '25 Mar 2022',
+            date: '13 Nov 2022',
             username: 'Ben Horn',
         },
         
@@ -39,7 +39,6 @@ const MainPage = () => {
     const [newTodo, setNewTodo] = useState({id: '', title: '', description: '', username: '', date: ''});
     const [username, setUsername] = useState('Default Name');
     const [currentDate, setCurrentDate] = useState(new Date().toLocaleDateString('en-US', options).split(',').join(''));
-    const [errors, setErrors] = useState({title: false});
 
     function changeDate(e) {
         setCurrentDate(new Date(e).toLocaleDateString('en-US', options).split(',').join(''));
@@ -60,8 +59,6 @@ const MainPage = () => {
                     setModalOpen={setModalOpen}
                     username={username}
                     currentDate={currentDate}
-                    errors={errors}
-                    setErrors={setErrors}
                 />
             </div>
             <AppModal modalOpen={modalOpen} setModalOpen={setModalOpen}>
