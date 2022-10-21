@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import CreateTodo from "../components/CreateTodo";
 import TodoHeader from "../components/TodoHeader";
 import TodoList from "../components/TodoList";
+import CompletedTodosList from "../components/CompletedTodosList"
 import AppButton from "../components/UI/AppButton/AppButton";
 import AppInput from "../components/UI/AppInput/AppInput";
 import AppModal from "../components/UI/AppModal/AppModal";
@@ -28,17 +29,27 @@ const MainPage = () => {
         {
             id: 3,
             title: 'Learn React Hooks',
-            description: 'Need for making amazing websites',
+            description: 'Need for making amazing apps',
             date: '13 Nov 2022',
             username: 'Ben Horn',
         },
         
+    ]);
+    const [completedTodos, setCompletedTodos] = useState([
+        {
+            id: 1,
+            title: 'Create todo-app',
+            description: 'Create new project in react',
+            date: '13 Oct 2022',
+            username: 'Ben Horn',
+        },
     ]);
     
     const [modalOpen, setModalOpen] = useState(false);
     const [newTodo, setNewTodo] = useState({id: '', title: '', description: '', username: '', date: ''});
     const [username, setUsername] = useState('Default Name');
     const [currentDate, setCurrentDate] = useState(new Date().toLocaleDateString('en-US', options).split(',').join(''));
+    const [currentTab, setCurrentTab] = useState('todos');
 
     function changeDate(e) {
         setCurrentDate(new Date(e).toLocaleDateString('en-US', options).split(',').join(''));
@@ -48,8 +59,16 @@ const MainPage = () => {
         <div className="main-container">
             <div className="todo-app">
                 <div>
-                    <TodoHeader/>
-                    <TodoList todos={todos}/>
+                    <TodoHeader 
+                        totalTodos={todos.length}
+                        totalCompletedTodos={completedTodos.length}
+                        currentTab={currentTab}
+                        setCurrentTab={setCurrentTab}
+                    />
+                    {currentTab === 'todos'
+                        ? <TodoList todos={todos}/> 
+                        : <CompletedTodosList todos={completedTodos}/>
+                    }
                 </div>
                 <CreateTodo
                     todos={todos}
