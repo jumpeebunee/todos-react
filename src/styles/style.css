@@ -37,8 +37,22 @@ html {
 
 .todo-header {
   display: flex;
-  gap: 30px;
+  justify-content: space-between;
   border-bottom: 2px solid #F4F4F4;
+}
+
+.todo-header__buttons {
+  display: flex;
+  gap: 30px;
+}
+
+.todo-header__clear {
+  width: 31px;
+  height: 31px;
+  background-image: url(../assets/img/clear.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
 }
 
 .todo-header__info {

@@ -4,10 +4,10 @@ import CalendarIcon from "../assets/img/calendar.svg";
 import CalendarGrey from "../assets/img/calendarGrey.svg";
 import UserIcon from "../assets/img/user.svg";
 
-const TodoItem = ({title, description, date, username}) => {
+const TodoItem = ({title, description, date, username, id, removeTodo}) => {
     return (
         <li className="todo-app__item">
-            <RadioButton/>
+            <RadioButton onChange={() => removeTodo(id)}/>
             <div className="todo-app__item-main">
                 <h3>{title}</h3>
                 <p>{description}</p>

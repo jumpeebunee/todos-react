@@ -1,7 +1,7 @@
 import React from "react";
 import TodoItem from "./TodoItem";
 
-const TodoList = ({todos}) => {
+const TodoList = ({todos, removeTodo}) => {
     return (
         <div className="app-container"> 
             <ul className="todo-app_list">
@@ -12,6 +12,8 @@ const TodoList = ({todos}) => {
                         description={todo.description}
                         username={todo.username}
                         date={todo.date}
+                        id={todo.id}
+                        removeTodo={removeTodo}
                     />
                 )}
             </ul>

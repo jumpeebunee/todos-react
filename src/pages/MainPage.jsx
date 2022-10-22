@@ -54,6 +54,14 @@ const MainPage = () => {
     function changeDate(e) {
         setCurrentDate(new Date(e).toLocaleDateString('en-US', options).split(',').join(''));
     };
+
+    const removeTodo = (id) => {
+        const filteredTodos = todos.filter(item => item.id !== id);
+        const fileredCompletedTodos = todos.filter(item => item.id === id);
+
+        setTodos(filteredTodos);
+        setCompletedTodos([...completedTodos, ...fileredCompletedTodos]);
+    };
     
     return (
         <div className="main-container">
@@ -64,9 +72,10 @@ const MainPage = () => {
                         totalCompletedTodos={completedTodos.length}
                         currentTab={currentTab}
                         setCurrentTab={setCurrentTab}
+                        setCompletedTodos={setCompletedTodos}
                     />
                     {currentTab === 'todos'
-                        ? <TodoList todos={todos}/> 
+                        ? <TodoList todos={todos} removeTodo={removeTodo}/> 
                         : <CompletedTodosList todos={completedTodos}/>
                     }
                 </div>

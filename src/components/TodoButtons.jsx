@@ -4,13 +4,11 @@ import calednarIcon from "../assets/img/calendarNone.svg";
 import userIcon from "../assets/img/user.svg";
 import AppButton from "./UI/AppButton/AppButton";
 
-const TodoButtons = ({todos, setTodos, newTodo, setModalOpen, username, currentDate}) => {
+const TodoButtons = ({todos, setTodos, newTodo, setNewTodo, setModalOpen, username, currentDate}) => {
 
     function addNewTodo() {
-        if (new Date(currentDate).getTime() - new Date().getTime() > 0) {
-
-        };
-        setTodos([...todos, {...newTodo,  date: currentDate, username: username}]);
+        setTodos([...todos, {...newTodo, id: new Date().getTime(),  date: currentDate, username: username}]);
+        setNewTodo({id: '', title: '', description: '', username: '', date: '' });
     };
 
     return (
