@@ -243,4 +243,22 @@ html {
 .todo-app__create-buttons-change {
   display: flex;
   gap: 20px;
+}
+
+.todo-enter {
+  opacity: 0;
+}
+
+.todo-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease;
+}
+
+.todo-exit {
+  opacity: 1;
+}
+
+.todo-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease;
 }/*# sourceMappingURL=style.css.map */
