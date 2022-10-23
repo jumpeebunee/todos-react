@@ -5,7 +5,7 @@ import userIcon from "../assets/img/user.svg";
 import AppButton from "./UI/AppButton/AppButton";
 
 const TodoButtons = ({todos, setTodos, newTodo, setNewTodo, setModalOpen, username, currentDate}) => {
-
+    
     function addNewTodo() {
         setTodos([...todos, {...newTodo, id: new Date().getTime(),  date: currentDate, username: username}]);
         setNewTodo({id: '', title: '', description: '', username: '', date: '' });

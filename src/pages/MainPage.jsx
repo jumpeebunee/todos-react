@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import CreateTodo from "../components/CreateTodo";
 import TodoHeader from "../components/TodoHeader";
 import TodoList from "../components/TodoList";
@@ -9,41 +9,43 @@ import AppModal from "../components/UI/AppModal/AppModal";
 
 const MainPage = () => {
 
-    const options = {year: 'numeric', month: 'short', day: 'numeric' };
-
-    const [todos, setTodos] = useState([
+    const demoTodos = [
         {
             id: 1,
             title: 'Learn javascripit and typescript',
             description: 'At the Frontendconf 2021 conference, showed the pros and cons of TypeScript',
-            date: '25 Oct 2022',
+            date: 'Oct 25 2022',
             username: 'Ben Horn',
         },
         {
             id: 2,
             title: 'Create Landing page',
             description: '',
-            date: '20 Oct 2022',
+            date: 'Oct 20 2022',
             username: 'Ben Horn',
         },
         {
             id: 3,
             title: 'Learn React Hooks',
             description: 'Need for making amazing apps',
-            date: '13 Nov 2022',
+            date: 'Nov 13 2022',
             username: 'Ben Horn',
         },
-        
-    ]);
-    const [completedTodos, setCompletedTodos] = useState([
+    ];
+    const demoCompletedTodos = [
         {
-            id: 1,
+            id: 4,
             title: 'Create todo-app',
             description: 'Create new project in react',
-            date: '13 Oct 2022',
+            date: 'Oct 13 2022',
             username: 'Ben Horn',
         },
-    ]);
+    ];
+
+    const options = { year: 'numeric', month: 'short', day: 'numeric' };
+
+    const [todos, setTodos] = useState((localStorage.getItem('todos')) ? JSON.parse(localStorage.getItem('todos')) : demoTodos);
+    const [completedTodos, setCompletedTodos] = useState((localStorage.getItem('completedTodos')) ? JSON.parse(localStorage.getItem('completedTodos')) : demoCompletedTodos);
     
     const [modalOpen, setModalOpen] = useState(false);
     const [newTodo, setNewTodo] = useState({id: '', title: '', description: '', username: '', date: ''});
@@ -62,7 +64,15 @@ const MainPage = () => {
         setTodos(filteredTodos);
         setCompletedTodos([...completedTodos, ...fileredCompletedTodos]);
     };
-    
+
+    useMemo(() => {
+        localStorage.setItem('todos', JSON.stringify(todos));
+    },[todos]);
+
+    useMemo(() => {
+        localStorage.setItem('completedTodos', JSON.stringify(completedTodos));
+    },[completedTodos])
+
     return (
         <div className="main-container">
             <div className="todo-app">
