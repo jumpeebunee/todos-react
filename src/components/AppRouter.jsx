@@ -5,7 +5,8 @@ import MainPage from "../pages/MainPage";
 const AppRouter = () => {
     return (
         <Routes>
-            <Route element={<MainPage/>} path="/main"/>
+            <Route element={<MainPage/>} path="/"/>
+            <Route element={<MainPage/>} path="*"></Route>
         </Routes>
     );
 };
