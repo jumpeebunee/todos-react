@@ -17,6 +17,8 @@ $purple: #672EE3;
     justify-content: center;
     padding-top: 140px;
     padding-bottom: 140px;
+    padding-right: 50px;
+    padding-left: 50px;
 }
 
 .todo-app {
@@ -34,7 +36,8 @@ $purple: #672EE3;
 
 .app-container {
     width: 100%;
-    max-width: 1020px;
+    padding-left: 30px;
+    padding-right: 30px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -247,4 +250,156 @@ $purple: #672EE3;
 .todo-exit-active {
   opacity: 0;
   transition: opacity 500ms ease;
+}
+
+
+@media (max-width: 656px) {
+    .todo-app__create-buttons-change {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 562px) {
+    .main-container {
+        padding-top: 24.91vw;
+        padding-bottom: 24.91vw;
+        padding-right: 8.90vw;
+        padding-left: 8.90vw;
+    }
+    
+    .todo-app {
+        max-width: 1100px;
+        height: auto;
+        padding-top: 4.27vw;
+        border-radius: 3.56vw;
+        box-shadow: 0px 3.56vw 3.56vw rgba(0, 0, 0, 0.25);
+    }
+    
+    .app-container {
+        padding-left: 5.34vw;
+        padding-right: 5.34vw;
+    }
+    
+    .todo-header {
+        border-bottom: 0.36vw solid #F4F4F4;
+    }
+    
+    .todo-header__buttons {
+        gap: 5.34vw;
+    }
+    
+    .todo-header__clear {
+        width: 5.52vw;
+        height: 5.52vw;
+    }
+    
+    .todo-header__info {
+        padding-bottom: 3.38vw;
+    
+        &::after {
+            height: 0.36vw;
+            bottom: -0.36vw;
+            border-radius: 0.71vw;
+        }
+    
+        h2 {
+            margin-right: 1.78vw;
+            font-size: 4.27vw;
+            line-height: 4.98vw
+        }
+    
+        span {
+            padding: 0.89vw 1.78vw;
+            font-size: 3.20vw;
+            line-height: 3.74vw;
+        }
+    }
+    
+    .todo-header__info_active {
+        &::after {
+            height: 0.36vw;
+            bottom: -0.36vw;
+            border-radius: 0.71vw;
+        }
+    }
+    
+    .todo-app_list {
+        height: 71.17vw;
+        margin: 7.12vw 0px;
+    }
+    
+    .todo-app__item {
+        padding-bottom: 3.56vw;
+    
+        &:not(:last-child) {
+            margin-bottom: 3.56vw;
+        }
+    
+        h3 {
+            font-size: 3.20vw;
+            line-height: 3.74vw;
+        }
+    
+        p {
+            margin-top: 0.89vw;
+            font-size: 2.85vw;
+            line-height: 3.38vw;
+        }
+    }
+    
+    .todo-app__item-main {
+        margin-left: 2.31vw;
+    }
+    
+    .todo-app__item-about {
+        margin-top: 1.78vw;
+    }
+    
+    .todo-app__item-info {
+        font-size: 2.85vw;
+        line-height: 3.38vw;
+    
+        span {
+            width: 3.20vw;
+            height: 3.56vw;
+            margin-right: 1.78vw;
+        }
+    }
+    
+    .todo-app__item-about-dot {
+        width: 0.89vw;
+        height: 0.89vw;
+        margin: 0px 1.78vw;
+    }
+    
+    .app-container__create {
+        padding-top: 7.12vw;
+        padding-bottom: 6.05vw;
+    }
+    
+    .todo-app__create {
+        box-shadow: 0px -0.71vw 3.56vw rgba(0, 0, 0, 0.15);
+        border-radius: 3.56vw;
+    }
+    
+    .todo-app__create-inputs {
+        textarea {
+            margin-top: 2.67vw;
+            height: 14.77vw;
+        }
+    
+        textarea, textarea::placeholder {
+            font-size: 3.20vw;
+            line-height: 3.74vw;
+        }
+    
+        input, input::placeholder {
+            font-size: 3.91vw;
+            line-height: 4.63vw;
+        }
+    }
+    
+    .todo-app__create-buttons-change {
+        gap: 1.78vw;
+    }
 }

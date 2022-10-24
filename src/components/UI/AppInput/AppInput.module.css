@@ -16,3 +16,17 @@ input[type="date"] {
 ::-webkit-calendar-picker-indicator{
     display: none;
 }
+
+@media (max-width: 562px) {
+    .appInput {
+        padding: 2.14vw 1.78vw 1.96vw 1.78vw;
+        border-radius: 1.78vw;
+        font-size: 2.49vw;
+        line-height: 2.85vw;
+    }
+    
+    input[type="date"] {
+        font-size: 2.85vw;
+        line-height: 2.85vw;
+    }
+}

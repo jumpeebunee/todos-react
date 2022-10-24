@@ -25,3 +25,15 @@
     border-radius: 50%;
     transition: border .2s linear;
 }
+
+@media (max-width: 562px) { 
+    .checkboxButtonInput:hover~.checkboxButtonIcon {
+        border: solid 1.42vw #CB6668;
+    }
+    
+    .checkboxButtonIcon {
+        width: 5.34vw;
+        height: 5.34vw;
+    }
+    
+}
