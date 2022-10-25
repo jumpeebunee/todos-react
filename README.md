@@ -3,3 +3,8 @@
 [Live Demo](https://reliable-dolphin-8f21a5.netlify.app). 
 The application is implemented from scratch using react. There are active tasks and already completed ones. Completed tasks can be cleared. All tasks are saved in localstorage. You can change the date of the task and enter the user name. Adding a task with an empty string will not work. The design is adapted to all devices.
 
+## Main Page
+![image](https://user-images.githubusercontent.com/105386597/197817947-27674329-4883-4452-8860-f87631a16008.png)
+
+## User Options
+![image](https://user-images.githubusercontent.com/105386597/197818077-7966ecb8-8edc-4da5-856a-236d2d9b170b.png)
