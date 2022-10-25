@@ -1,0 +1,39 @@
+.checkboxButton {
+    cursor: pointer;
+}
+
+.checkboxButtonInput {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+.checkboxButtonInput:hover~.checkboxButtonIcon {
+    border: solid 8px #CB6668;
+}
+
+.checkboxButtonIcon {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    transition: border .2s linear;
+}
+
+@media (max-width: 562px) { 
+    .checkboxButtonInput:hover~.checkboxButtonIcon {
+        border: solid 1.42vw #CB6668;
+    }
+    
+    .checkboxButtonIcon {
+        width: 5.34vw;
+        height: 5.34vw;
+    }
+    
+}

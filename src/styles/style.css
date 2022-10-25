@@ -1,0 +1,403 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+* {
+  font-family: Roboto;
+}
+
+html {
+  background-color: #EFEEF5;
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 140px;
+  padding-bottom: 140px;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+.todo-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1100px;
+  height: 800px;
+  padding-top: 24px;
+  border-radius: 20px;
+  background-color: #FFF;
+  box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.25);
+}
+
+.app-container {
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #F4F4F4;
+}
+
+.todo-header__buttons {
+  display: flex;
+  gap: 30px;
+}
+
+.todo-header__clear {
+  width: 31px;
+  height: 31px;
+  background-image: url(../assets/img/clear.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+}
+
+.todo-header__info {
+  display: inline-flex;
+  align-items: center;
+  padding-bottom: 19px;
+  position: relative;
+  background: transparent;
+}
+.todo-header__info::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  position: absolute;
+  bottom: -2px;
+  border-radius: 4px;
+  background-color: #672EE3;
+  transition: width ease 0.4s;
+}
+.todo-header__info h2 {
+  margin-right: 10px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+}
+.todo-header__info span {
+  display: block;
+  padding: 5px 10px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  background-color: #F6F5FA;
+  border-radius: 50%;
+}
+
+.todo-header__info_active::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: -2px;
+  border-radius: 4px;
+  background-color: #672EE3;
+}
+
+.todo-app_list {
+  height: 400px;
+  overflow-y: scroll;
+  margin: 40px 0px;
+}
+.todo-app_list::-webkit-scrollbar {
+  width: 0px;
+}
+
+.todo-app__item {
+  display: flex;
+  list-style: none;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #F4F4F4;
+}
+.todo-app__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+.todo-app__item h3 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+}
+.todo-app__item p {
+  margin-top: 5px;
+  font-size: 16px;
+  line-height: 19px;
+  color: #908A9B;
+}
+
+.todo-app__item-main {
+  margin-left: 13px;
+}
+
+.todo-app__item-about {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.todo-app__item-info {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 19px;
+}
+.todo-app__item-info span {
+  display: block;
+  width: 18px;
+  height: 20px;
+  margin-right: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.todo-app__item-calendar {
+  color: #908A9B;
+}
+
+.todo-app__item-calendar_deadline {
+  color: #CB6668;
+}
+
+.todo-app__item-user {
+  color: #908A9B;
+}
+
+.todo-app__item-about-dot {
+  width: 5px;
+  height: 5px;
+  margin: 0px 10px;
+  border-radius: 50%;
+  background: rgba(144, 138, 155, 0.4);
+}
+
+.app-container__create {
+  padding-top: 40px;
+  padding-bottom: 34px;
+}
+
+.todo-app__create {
+  box-shadow: 0px -4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+}
+
+.todo-app__create-inputs {
+  display: flex;
+  flex-direction: column;
+}
+.todo-app__create-inputs textarea {
+  margin-top: 15px;
+  height: 83px;
+}
+.todo-app__create-inputs textarea::-moz-placeholder {
+  resize: none;
+  font-size: 18px;
+  line-height: 21px;
+  color: #908A9B;
+}
+.todo-app__create-inputs textarea:-ms-input-placeholder {
+  resize: none;
+  font-size: 18px;
+  line-height: 21px;
+  color: #908A9B;
+}
+.todo-app__create-inputs textarea, .todo-app__create-inputs textarea::placeholder {
+  resize: none;
+  font-size: 18px;
+  line-height: 21px;
+  color: #908A9B;
+}
+.todo-app__create-inputs input::-moz-placeholder {
+  font-size: 22px;
+  line-height: 26px;
+  color: #908A9B;
+}
+.todo-app__create-inputs input:-ms-input-placeholder {
+  font-size: 22px;
+  line-height: 26px;
+  color: #908A9B;
+}
+.todo-app__create-inputs input, .todo-app__create-inputs input::placeholder {
+  font-size: 22px;
+  line-height: 26px;
+  color: #908A9B;
+}
+.todo-app__create-inputs .todo-app__create-input_error::-moz-placeholder {
+  color: #CB6668;
+}
+.todo-app__create-inputs .todo-app__create-input_error:-ms-input-placeholder {
+  color: #CB6668;
+}
+.todo-app__create-inputs .todo-app__create-input_error::placeholder {
+  color: #CB6668;
+}
+
+.todo-app__create-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-app__create-buttons-change {
+  display: flex;
+  gap: 20px;
+}
+
+.todo-enter {
+  opacity: 0;
+}
+
+.todo-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease;
+}
+
+.todo-exit {
+  opacity: 1;
+}
+
+.todo-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+@media (max-width: 656px) {
+  .todo-app__create-buttons-change {
+    gap: 10px;
+  }
+}
+@media (max-width: 562px) {
+  .main-container {
+    padding-top: 24.91vw;
+    padding-bottom: 24.91vw;
+    padding-right: 8.9vw;
+    padding-left: 8.9vw;
+  }
+  .todo-app {
+    max-width: 1100px;
+    height: auto;
+    padding-top: 4.27vw;
+    border-radius: 3.56vw;
+    box-shadow: 0px 3.56vw 3.56vw rgba(0, 0, 0, 0.25);
+  }
+  .app-container {
+    padding-left: 5.34vw;
+    padding-right: 5.34vw;
+  }
+  .todo-header {
+    border-bottom: 0.36vw solid #F4F4F4;
+  }
+  .todo-header__buttons {
+    gap: 5.34vw;
+  }
+  .todo-header__clear {
+    width: 5.52vw;
+    height: 5.52vw;
+  }
+  .todo-header__info {
+    padding-bottom: 3.38vw;
+  }
+  .todo-header__info::after {
+    height: 0.36vw;
+    bottom: -0.36vw;
+    border-radius: 0.71vw;
+  }
+  .todo-header__info h2 {
+    margin-right: 1.78vw;
+    font-size: 4.27vw;
+    line-height: 4.98vw;
+  }
+  .todo-header__info span {
+    padding: 0.89vw 1.78vw;
+    font-size: 3.2vw;
+    line-height: 3.74vw;
+  }
+  .todo-header__info_active::after {
+    height: 0.36vw;
+    bottom: -0.36vw;
+    border-radius: 0.71vw;
+  }
+  .todo-app_list {
+    height: 71.17vw;
+    margin: 7.12vw 0px;
+  }
+  .todo-app__item {
+    padding-bottom: 3.56vw;
+  }
+  .todo-app__item:not(:last-child) {
+    margin-bottom: 3.56vw;
+  }
+  .todo-app__item h3 {
+    font-size: 3.2vw;
+    line-height: 3.74vw;
+  }
+  .todo-app__item p {
+    margin-top: 0.89vw;
+    font-size: 2.85vw;
+    line-height: 3.38vw;
+  }
+  .todo-app__item-main {
+    margin-left: 2.31vw;
+  }
+  .todo-app__item-about {
+    margin-top: 1.78vw;
+  }
+  .todo-app__item-info {
+    font-size: 2.85vw;
+    line-height: 3.38vw;
+  }
+  .todo-app__item-info span {
+    width: 3.2vw;
+    height: 3.56vw;
+    margin-right: 1.78vw;
+  }
+  .todo-app__item-about-dot {
+    width: 0.89vw;
+    height: 0.89vw;
+    margin: 0px 1.78vw;
+  }
+  .app-container__create {
+    padding-top: 7.12vw;
+    padding-bottom: 6.05vw;
+  }
+  .todo-app__create {
+    box-shadow: 0px -0.71vw 3.56vw rgba(0, 0, 0, 0.15);
+    border-radius: 3.56vw;
+  }
+  .todo-app__create-inputs textarea {
+    margin-top: 2.67vw;
+    height: 14.77vw;
+  }
+  .todo-app__create-inputs textarea::-moz-placeholder {
+    font-size: 3.2vw;
+    line-height: 3.74vw;
+  }
+  .todo-app__create-inputs textarea:-ms-input-placeholder {
+    font-size: 3.2vw;
+    line-height: 3.74vw;
+  }
+  .todo-app__create-inputs textarea, .todo-app__create-inputs textarea::placeholder {
+    font-size: 3.2vw;
+    line-height: 3.74vw;
+  }
+  .todo-app__create-inputs input::-moz-placeholder {
+    font-size: 3.91vw;
+    line-height: 4.63vw;
+  }
+  .todo-app__create-inputs input:-ms-input-placeholder {
+    font-size: 3.91vw;
+    line-height: 4.63vw;
+  }
+  .todo-app__create-inputs input, .todo-app__create-inputs input::placeholder {
+    font-size: 3.91vw;
+    line-height: 4.63vw;
+  }
+  .todo-app__create-buttons-change {
+    gap: 1.78vw;
+  }
+}/*# sourceMappingURL=style.css.map */

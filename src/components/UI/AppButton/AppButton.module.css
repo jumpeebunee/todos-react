@@ -1,0 +1,31 @@
+.button {
+    padding: 10px 38px;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 20px;
+    color: #FFFFFF;
+    background: #672EE3;
+    border-radius: 10px;
+    transition: all ease .4s;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    background: #461E9C;
+}
+
+@media (max-width: 656px) {
+    .button {
+        font-weight: 400;
+        padding: 8px 27px;
+    }
+}
+
+@media (max-width: 562px) {
+    .button {
+        padding: 1.42vw 4.80vw;
+        font-size: 3.02vw;
+        line-height: 3.56vw;
+        border-radius: 1.78vw;
+    }
+}

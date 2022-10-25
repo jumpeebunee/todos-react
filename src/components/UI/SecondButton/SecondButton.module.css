@@ -1,0 +1,50 @@
+.button {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 2px solid rgba(144, 138, 155, 0.2);
+    border-radius: 10px;
+    transition: transform ease .4s;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+.buttonText {
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 20px;
+    color: rgba(144, 138, 155, 0.8);
+}
+
+.buttonIcon {
+    display: block;
+    width: 18px;
+    height: 20px;
+    margin-right: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+@media (max-width: 562px) {
+    .button {
+        padding: 1.22vw 1.78vw;
+        border-radius: 1.78vw;
+    }
+    
+    .buttonText {
+        font-weight: 400;
+        font-size: 3.02vw;
+        line-height: 3.56vw;
+    }
+    
+    .buttonIcon {
+        width: 3.20vw;
+        height: 3.56vw;
+        margin-right: 1.78vw;
+    }
+    
+}

@@ -1,0 +1,32 @@
+.appInput {
+    width: 100%;
+    padding: 12px 10px 11px 10px;
+    border: solid 1px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+input[type="date"] {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 16px;
+    line-height: 16px;
+}
+
+::-webkit-calendar-picker-indicator{
+    display: none;
+}
+
+@media (max-width: 562px) {
+    .appInput {
+        padding: 2.14vw 1.78vw 1.96vw 1.78vw;
+        border-radius: 1.78vw;
+        font-size: 2.49vw;
+        line-height: 2.85vw;
+    }
+    
+    input[type="date"] {
+        font-size: 2.85vw;
+        line-height: 2.85vw;
+    }
+}
